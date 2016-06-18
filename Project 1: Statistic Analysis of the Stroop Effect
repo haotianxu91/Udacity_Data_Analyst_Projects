@@ -1,0 +1,131 @@
+In the final project for lesson 1, Test a Perceptual Phenomenon, I tested a data set provided by Udacity for the Stroop Effect.
+
+Below is my final submission, which has been accepted by Udacity reviewers.
+
+Background Information
+In a Stroop task, participants are presented with a list of words, with each word displayed in a color of ink. The participant’s task is to say out loud the color of the ink in which the word is printed. The task has two conditions: a congruent words condition, and an incongruent words condition. In the congruent words condition, the words being displayed are color words whose names match the colors in which they are printed: for example RED, BLUE. In the incongruent words condition, the words displayed are color words whose names do not match the colors in which they are printed: for example PURPLE, ORANGE. In each case, we measure the time it takes to name the ink colors in equally-sized lists. Each participant will go through and record a time from each condition.
+Questions For Investigation
+As a general note, be sure to keep a record of any resources that you use or refer to in the creation of your project. You will need to report your sources as part of the project submission.
+1. What is our independent variable? What is our dependent variable?
+
+The independent variable is the type of list- congruent or incongruent words.
+The dependent variable is the time it takes participants to name the ink colors. 
+
+2. What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.
+
+H(null):  μC ≥ μI) The mean time it takes the general population to name the ink colors for incongruent words is equal to or less than the time it takes to name the ink colors for congruent words. 
+μC is the population mean time for the congruent words and  μI is the population mean time for the incongruent words
+H(alt): μC < μI  The mean time it takes for the general population to name the ink colors of incongruent words is more time to than it takes to name name the ink colors for congruent words. 
+μ1 is population mean for time it takes to name ink colors of incongruent words
+μ2 is the population mean for the time it takes to name ink colors of congruent words. 
+
+
+We will conduct a one-tailed, dependent (two conditions) within -subject t-test. To measure the Stroop effect, we are interested in whether or not participants will take longer to name the ink colors of incongruent words, so there is only one tail that we want to measure. Rather than conducting an independent t-test (where we would use different set of participants for each list type), we want to use  the same subjects to control for other factors that might vary between participant groups (e.g., English fluency). We will need to be aware of the risks associated with within-subject tests, including the fact that the participants might be more comfortable after taking the first test and thus naturally do “better” in the second test. To help allay this risk, we will have half of participants start with the congruent list, and half start with the incongruent list. 
+
+Furthermore, this is a small sample size with only 24 total participants, and we are given not given any information about the population 
+
+
+
+
+Now it’s your chance to try out the Stroop task for yourself. Go to this link, which has a Java-based applet for performing the Stroop task. Record the times that you received on the task (you do not need to submit your times to the site.) Now, download this dataset which contains results from a number of participants in the task. Each row of the dataset contains the performance for one participant, with the first number their results on the congruent task and the second number their performance on the incongruent task.
+3. Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability.
+
+
+
+Congruent
+Incongruent
+# of observations in sample
+24
+24
+Mean of sample
+14.05
+22.02
+Standard Deviation
+3.56
+4.8
+
+
+4. Provide one or two visualizations that show the distribution of the sample data. Write one or two sentences noting what you observe about the plot or plots.
+
+Boxplot for Congruent:
+Max--------------------->22.33
+
+
+
+
+
+
+
+
+Q3---------------------->16.6
+
+
+Median---------------->14.36
+
+
+Q1------------------------>11.53
+
+
+
+
+
+Min ------------------> 8.63
+
+
+Boxplot for Incongruent:
+
+Outliers: 35.255 , 34.288
+
+
+
+
+
+
+
+
+Q3-------------------> 24.37
+
+
+Median ------------->21.02
+Q1-------------------> 18.67
+
+
+Min----------------->15.687
+
+
+
+The incongruent sample has two outliers that skew the data. Based on the shape of the box and whisker plots, it would seem that the samples follow roughly a normal distribution with the exception of the outliers. Based on these two plots, it would appear that there is evidence to support the Stroop effect though we do not know if the differences are statistically significant yet. 
+
+
+
+
+
+
+
+
+
+5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?
+
+The test will be one tailed t at the 95% confidence level with alpha of 0.05% 
+
+Based on a degree of freedom of 23 (n-1), the t critical number is 1.714.
+
+Based on the data, we find: 
+
+Sp^2 = 35.68078611
+SE = 1.724354616
+T-stat = 4.62
+R-squared = .33
+
+Based on these results, we can see that the our t-stat falls well beyond the t critical number, which means we can reject our H(null) and state that there is statistically significant evidence showing participants taking longer time to name ink colors for the incongruent list compared to the congruent list. This evidence suggests that the Stroop effect in fact is true. The R-squared value suggests that 33 percent of the difference in means between the two lists can be explained by our independent variables. 
+
+This result does match with my expectations because heck it is difficult to name the ink colors when the word tries to make my brain say something else! 
+
+
+6. Optional: What do you think is responsible for the effects observed? Can you think of an alternative or similar task that would result in a similar effect? Some research about the problem will be helpful for thinking about these two questions!
+
+
+There are many theories about the root cause of these effects, and the one I find most convincing is the automaticity theory which suggests that while it is automatic/habitual for our brain to process words, the same is not true for our processing of colors. In other words, words mean something to us while colors might not - at least not explicitly. 
+
+The spatial test would result in a similar effect. Basically, take on dot in space and surround it with up or down arrows. For arrows that are pointed up above the dot (congruent), you would be able to more quickly say “up” versus an arrow that is pointed up that is below the dot (incongruent). 
+
